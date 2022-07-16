@@ -7,7 +7,7 @@ final case class DependencyCheckConfig(
     failBuildOnCVSS: Option[Float],
     junitFailBuildOnCVSS: Option[Float],
     format: Option[String],
-    formats: Option[Seq[String]],
+    formats: Seq[String],
     outputDirectory: Option[Path],
     scanSet: Seq[Path],
     skip: Boolean,
@@ -27,5 +27,28 @@ final case class DependencyCheckConfig(
 )
 
 object DependencyCheckConfig {
-  val default: DependencyCheckConfig = ???
+  val default: DependencyCheckConfig = DependencyCheckConfig(
+    autoUpdate = None,
+    cveValidForHours = None,
+    failBuildOnCVSS = Some(11),
+    junitFailBuildOnCVSS = None,
+    format = Some("HTML"),
+    formats = Seq.empty,
+    outputDirectory = None,
+    scanSet = Seq.empty,
+    skip = false,
+    skipTestScope = true,
+    skipRuntimeScope = false,
+    skipProvidedScope = false,
+    skipOptionalScope = false,
+    suppressionFile = None,
+    suppressionFiles = Seq.empty,
+    cpeStartsWith = None,
+    hintsFile = None,
+    analysisTimeout = None,
+    enableExperimental = None,
+    enableRetired = None,
+    analyzers = DependencyCheckAnalyzerConfig.default,
+    advanced = DependencyCheckAdvancedConfig.default
+  )
 }

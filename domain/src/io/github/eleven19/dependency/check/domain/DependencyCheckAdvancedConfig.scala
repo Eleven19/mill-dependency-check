@@ -21,5 +21,20 @@ final case class DependencyCheckAdvancedConfig(
 )
 
 object DependencyCheckAdvancedConfig {
-  val default: DependencyCheckAdvancedConfig = ???
+  val default: DependencyCheckAdvancedConfig = DependencyCheckAdvancedConfig(
+    cveUrlModified = None,
+    cveUrlBase = None,
+    cveUser = None,
+    cvePassword = None,
+    cveWaitTime = None,
+    cveStartYear = None,
+    connectionTimeout = None,
+    dataDirectory = None,
+    databaseDriverName = None,
+    databaseDriverPath = None,
+    connectionString = None,
+    databaseUser = None,
+    databasePassword = None,
+    metaFileName = Some("dependency-check.ser")
+  )
 }
