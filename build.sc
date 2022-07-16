@@ -93,19 +93,19 @@ object itest extends MillIntegrationTestModule {
       Seq(
         PathRef(testBase / "minimal") -> Seq(
           TestInvocation.Targets(Seq("checkManifest"), noServer = true)
-        ),
-        PathRef(testBase / "directRelationship") -> Seq(
-          TestInvocation.Targets(Seq("verify"), noServer = true)
-        ),
-        PathRef(testBase / "eviction") -> Seq(
-          TestInvocation.Targets(Seq("verify"), noServer = true)
-        ),
-        PathRef(testBase / "range") -> Seq(
-          TestInvocation.Targets(Seq("verify"), noServer = true)
-        ),
-        PathRef(testBase / "reconciledRange") -> Seq(
-          TestInvocation.Targets(Seq("verify"), noServer = true)
         )
+        // PathRef(testBase / "directRelationship") -> Seq(
+        //   TestInvocation.Targets(Seq("verify"), noServer = true)
+        // ),
+        // PathRef(testBase / "eviction") -> Seq(
+        //   TestInvocation.Targets(Seq("verify"), noServer = true)
+        // ),
+        // PathRef(testBase / "range") -> Seq(
+        //   TestInvocation.Targets(Seq("verify"), noServer = true)
+        // ),
+        // PathRef(testBase / "reconciledRange") -> Seq(
+        //   TestInvocation.Targets(Seq("verify"), noServer = true)
+        // )
       )
     }
 }
