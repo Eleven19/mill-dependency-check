@@ -26,3 +26,8 @@ def checkManifest(ev: Evaluator) = T.command {
 
   assertEquals(1, 1)
 }
+
+def checkPropertyFilePaths(ev: Evaluator) = T.command {
+  val propertyFilePaths = minimal.dependencyCheckPropertyFilesResolved()
+  assertEquals(propertyFilePaths, Seq())
+}
