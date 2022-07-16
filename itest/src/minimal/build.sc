@@ -17,15 +17,6 @@ object minimal extends ScalaModule with DependencyCheckJavaModule {
 }
 
 def verify(ev: Evaluator) = T.command {
-  val config = minimal.dependencyCheckConfig()
+  val config = minimal.dependencyCheck.config()
   assertEquals(config, DependencyCheckConfig.default)
-//   val expected = ujson.read(os.read(os.pwd / "manifests.json"))
-
-//   val manifestMapping = Graph.generate(ev)()
-
-//   // Lil hacky but if we compare the strings they won't match, so we read that
-//   // back up into a ujson.Value so we can compare those two
-//   val result = ujson.read(upickle.default.write(manifestMapping))
-
-  assertEquals(1, 1)
 }
