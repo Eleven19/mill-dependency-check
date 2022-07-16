@@ -1,6 +1,7 @@
 import mill._, scalalib._
 import $exec.plugins
-import io.github.eleven19.dependency.check.DependencyCheckJavaModule
+import io.github.eleven19.dependency.check.domain._
+import io.github.eleven19.mill.dependency.check.DependencyCheckJavaModule
 import mill.eval.Evaluator
 import $ivy.`org.scalameta::munit:0.7.29`
 import munit.Assertions._
@@ -15,7 +16,9 @@ object minimal extends ScalaModule with DependencyCheckJavaModule {
   }
 }
 
-def checkManifest(ev: Evaluator) = T.command {
+def verify(ev: Evaluator) = T.command {
+  val config = minimal.dependencyCheckConfig()
+  assertEquals(config, DependencyCheckConfig.default)
 //   val expected = ujson.read(os.read(os.pwd / "manifests.json"))
 
 //   val manifestMapping = Graph.generate(ev)()
@@ -25,9 +28,4 @@ def checkManifest(ev: Evaluator) = T.command {
 //   val result = ujson.read(upickle.default.write(manifestMapping))
 
   assertEquals(1, 1)
-}
-
-def checkPropertyFilePaths(ev: Evaluator) = T.command {
-  val propertyFilePaths = minimal.dependencyCheckPropertyFilesResolved()
-  assertEquals(propertyFilePaths, Seq())
 }

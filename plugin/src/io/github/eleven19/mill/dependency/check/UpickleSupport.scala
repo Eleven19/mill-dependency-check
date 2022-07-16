@@ -1,4 +1,4 @@
-package io.github.eleven19.dependency.check
+package io.github.eleven19.mill.dependency.check
 import io.github.eleven19.dependency.check.domain._
 import upickle.default._
 import java.net.URL

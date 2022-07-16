@@ -1,4 +1,4 @@
-package io.github.eleven19.dependency.check
+package io.github.eleven19.mill.dependency.check
 import mill.api.PathRef
 import mill.{Agg, T}
 import mill.scalalib.JavaModule
