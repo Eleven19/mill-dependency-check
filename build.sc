@@ -53,7 +53,7 @@ trait Common
 }
 
 object domain extends Common {
-  override def artifactName = "mill-dependency-check-domain"
+  override def artifactName = "dependency-check-domain"
 }
 
 object plugin extends Common with BuildInfo {
@@ -92,7 +92,7 @@ object itest extends MillIntegrationTestModule {
     T {
       Seq(
         PathRef(testBase / "minimal") -> Seq(
-          TestInvocation.Targets(Seq("checkManifest"), noServer = true)
+          TestInvocation.Targets(Seq("verify"), noServer = true)
         )
         // PathRef(testBase / "directRelationship") -> Seq(
         //   TestInvocation.Targets(Seq("verify"), noServer = true)
